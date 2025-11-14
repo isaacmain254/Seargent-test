@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -23,4 +23,48 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+/* Reusable Be Vietnam heading styles
+   - `beVietnamPro` font is registered in `app/layout.tsx` as
+     the CSS variable `--font-be-vietnam-pro`.
+   - Use the `.font-beVietnamPro` class on elements to reuse the
+     font-family + weight across the site.
+   - Also set a default `h1` rule as a fallback/global rule.
+*/
+
+:root {
+  --heading-font: var(--font-be-vietnam-pro);
+  --heading-weight: 700;
+}
+
+.font-beVietnamPro {
+  font-family: var(--heading-font), system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-weight: var(--heading-weight);
+}
+
+/* Apply to all h1s as a global fallback. Component classes can
+   still override details like color, size, etc. If a component
+   wants the shared font + weight, add `font-beVietnamPro`.
+*/
+h1 {
+  font-family: var(--heading-font), system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-weight: var(--heading-weight);
+}
+
+/* Google Fonts */
+:root {
+  --font-funky: var(--font-bungee);
+}
+
+/* Bungee helper class ---------------------------------------------------*/
+/* Use `className="font-funky"` on elements to apply the Bungee font
+   which is registered in `app/layout.tsx` as the CSS variable
+   `--font-bungee` (next/font/google provides the variable).
+*/
+.font-funky {
+  font-family: var(--font-funky), system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
 }
