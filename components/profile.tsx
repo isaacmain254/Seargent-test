@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Profile = () => {
   return (
-    <div className="relative w-[288px] h-[330px] rounded-[20px] border border-[#F0F0F0] py-6 px-4">
+    <div className="relative w-[288px] h-[330px] rounded-[20px] border border-[#E1EDE1] py-6 px-4">
       <div className="absolute top-0 right-0 w-[73px] h-5 flex items-center gap-1 ps-1.5 bg-[#F8F8F8] rounded-tr-[20px]">
         <div className="w-1.5 h-1.5 rounded-full bg-[#70B444]" />
         <span className="font-medium text-xs text-[#70B444]">Active</span>

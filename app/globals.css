@@ -1,44 +1,9 @@
 @import "tailwindcss";
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
-
-/* Reusable Be Vietnam heading styles
-   - `beVietnamPro` font is registered in `app/layout.tsx` as
-     the CSS variable `--font-be-vietnam-pro`.
-   - Use the `.font-beVietnamPro` class on elements to reuse the
-     font-family + weight across the site.
-   - Also set a default `h1` rule as a fallback/global rule.
-*/
-
 :root {
   --heading-font: var(--font-be-vietnam-pro);
   --heading-weight: 700;
 }
-
-
 
 h1 {
   font-family: var(--heading-font), system-ui, -apple-system, "Segoe UI", Roboto,
@@ -47,16 +12,23 @@ h1 {
 }
 
 .font-beVietnamPro {
-   font-family: var(--font-be-vietnam-pro), sans-serif;
+  font-family: var(--font-be-vietnam-pro), sans-serif;
 }
 
 .font-plusJakartaSans {
-   font-family: var(--font-plus-jakarta-sans), sans-serif;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
 }
 
 .font-bungee {
-   font-family: var(--font-bungee), cursive;
+  font-family: var(--font-bungee), cursive;
 }
 
+.clamp-list {
+  max-height: 220px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
 
-
+.clamp-list.expanded {
+  max-height: 2000px;
+}

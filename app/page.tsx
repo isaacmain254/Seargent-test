@@ -1,10 +1,7 @@
-"use client";
-
-import Link from "next/link";
 import Image from "next/image";
 import { benefits } from "@/constants/benefits";
-import { SERVICES } from "@/constants/services";
 import Profile from "@/components/profile";
+import Services from "@/components/Services";
 
 export default function Home() {
   return (
@@ -22,57 +19,7 @@ export default function Home() {
           </p>
         </div>
 
-        {/* h-576px */}
-        {/* <div className="h-[165px] overflow-hidden"> */}
-        <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-[18]  mx-5 lg:mx-0 ">
-          {SERVICES.map((service) => (
-            <div
-              key={service.id}
-              className="border border-[#70B444] rounded-2xl p-4 overflow-hidden"
-            >
-              <h3 className="text-[#70B444] text-base font-plusJakartaSans font-bold">
-                {service.title}
-              </h3>
-              <p className="my-[13] text-sm text-[#5F5F5F] font-plusJakartaSans">
-                {service.description}
-              </p>
-              <div className="text-sm text-[#5F5F5F]">
-                Starting at <br />
-                <span className="text-[32px] font-semibold font-plusJakartaSans">
-                  ${service.price}
-                </span>
-              </div>
-
-              <div>
-                <div className="text-base font-bold font-plusJakartaSans text-[#303030]">
-                  What it entails
-                </div>
-                <ul className="list-disc px-6 clamp-list">
-                  {service.items.map((item, index) => (
-                    <li
-                      key={index}
-                      className="text-base font-plusJakartaSans text-[#5F5F5F] font-normal"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <Link
-                href="#"
-                className="block w-full py-[5px] px-[15px] text-center text-[#70B444] font-beVietnamPro text-[17px] font-medium border border-gray-200"
-              >
-                View more
-              </Link>
-              <button className="block w-full my-1.5 py-[5px] px-[15px] text-center text-[#70B444] font-beVietnamPro text-[17px] font-medium border border-[#70B444] rounded-[7px] cursor-pointer">
-                Hire pro
-              </button>
-              <p className="text-[10px] italic font-normal font-beVietnamPro text-center text-[#5F5F5F]">
-                *Risk Free, Release pay only if satisfied
-              </p>
-            </div>
-          ))}
-        </div>
+        <Services />
       </section>
 
       <section className="w-full lg:w-[1231px] lg:h-[736px] opacity-100 border-t border-[#83A790] mx-auto lg:my-9.25">
