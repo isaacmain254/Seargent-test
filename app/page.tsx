@@ -277,7 +277,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full lg:w-[1231px] lg:h-[736px]  opacity-100  border-t border-[#83A790] mx-auto lg:my-9.25">
+      <section className="w-full lg:w-[1231px] lg:h-[736px]  opacity-100  border-t border-[#83A790] mx-auto lg:my-14">
         <div className="w-full my-[28] ">
           <h2 className="text-center font-beVietnamPro text-4xl leading-[100%] text-[#303030] pb-[14]">
             Meet our top-performing experts
