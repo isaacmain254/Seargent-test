@@ -8,7 +8,7 @@ import Profile from "@/components/profile";
 
 export default function Home() {
   return (
-    <main className="0">
+    <main className="bg-[#F5F5F5]">
       {/* h-736 */}
       <section className="w-full lg:w-[1231px] opacity-100 border-t border-[#83A790] lg:my-9.25 mx-auto">
         <div className="w-full  my-9.25">

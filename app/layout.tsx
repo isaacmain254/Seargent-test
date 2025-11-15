@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import {
   Be_Vietnam_Pro,
   Plus_Jakarta_Sans,
-  Bungee_Outline
+  Bungee_Outline,
 } from "next/font/google";
-
 
 import "./globals.css";
 
@@ -39,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${beVietnamPro.variable} ${plusJakartaSans.variable} ${bungee.variable} antialiased`}
+        className={`${beVietnamPro.variable} ${plusJakartaSans.variable} ${bungee.variable} antialiased bg-[#F5F5F5]`}
       >
         {children}
       </body>
