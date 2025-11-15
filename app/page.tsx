@@ -1,202 +1,255 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { benefits } from "@/constants/benefits";
+import { SERVICES } from "@/constants/services";
+import Profile from "@/components/profile";
 
 export default function Home() {
   return (
-    <main className="flex flex-col w-full justify-center items-center pt-5 ]">
-      <section className="w-[1231] h-[736] opacity-100 border border-[#83A790]">
-        <div className="w-full my-[28] border border-gray-200">
-          <h2 className="text-center font-beVietnamPro text-4xl leading-[100%] text-[#303030] pb-[14]">
+    <main className="0">
+      {/* h-736 */}
+      <section className="w-full lg:w-[1231px] opacity-100 border-t border-[#83A790] lg:my-9.25 mx-auto">
+        <div className="w-full  my-9.25">
+          <h2 className="text-center font-beVietnamPro text-4xl leading-[100%] text-[#303030] mb-3">
             Stand-alone services
           </h2>
-          <p className="w-[708] mx-auto font-medium text-sm leading-[100%] text-center text-[#5F5F5F]">
+          <p className="w-full lg:w-[708px] mx-auto font-plusJakartaSans font-medium text-sm leading-[100%] text-center text-[#5F5F5F]">
             We review for accuracy, clarity, and originality—refining everything
             from grammar to structure and citations. This ensures your work is
             polished and meets academic or professional standards.
           </p>
         </div>
-        <div className="w-full grid grid-cols-3 gap-[18] border border-gray-200">
-          <div className="border border-[#70B444] rounded-2xl p-4 h-[576px]">
-            <h3 className="text-[#70B444] text-base font-plusJakartaSans">
-              Resume Writing
-            </h3>
-            <p className="my-[13] text-sm text-[#5F5F5F] font-font-plusJakartaSans">
-              Craft a results-driven resume that opens doors—whether you&apos;re
-              starting fresh, pivoting careers, or aiming higher. We help you
-              present your value clearly, confidently, and competitively.
-            </p>
-            <div className="text-sm text-[#5F5F5F]">
-              Starting at <br />
-              <span className="text-[32px] font-semibold font-plusJakartaSans">
-                $40.00
-              </span>
-            </div>
-            <div className="h-[165px] overflow-hidden">
-              <div className="text-base font-bold font-plusJakartaSans text-[#303030]">
-                What it entails
-              </div>
-              <ul className="list-disc px-6">
-                <li className="text-base text-[#5F5F5F] font-normal">
-                  Comprehensive resume writing, whether creating from scratch or
-                  rewriting an existing document
-                </li>
-                <li className="text-base text-[#5F5F5F] font-normal">
-                  Tailoring content to align with your career goals, industry
-                  standards, and specific job targets
-                </li>
-                <li className="text-base text-[#5F5F5F] font-normal">
-                  Optimization for Applicant Tracking Systems (ATS) using
-                  strategic keyword integration Clear, compelling phrasing that
-                  highlights achievements, skills, and career progression
-                  Professional formatting that ensures a clean, modern, and
-                  recruiter-friendly presentation
-                </li>
-              </ul>
-            </div>
-            <Link
-              href="#"
-              className="block w-full py-[5px] px-[15px] text-center text-[#70B444] font-beVietnamPro text-[17px] font-medium border border-gray-200"
+
+        {/* h-576px */}
+        {/* <div className="h-[165px] overflow-hidden"> */}
+        <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-[18]  mx-5 lg:mx-0 ">
+          {SERVICES.map((service) => (
+            <div
+              key={service.id}
+              className="border border-[#70B444] rounded-2xl p-4 overflow-hidden"
             >
-              View more
-            </Link>
-            <button className="block w-full my-1.5 py-[5px] px-[15px] text-center text-[#70B444] font-beVietnamPro text-[17px] font-medium border border-[#70B444] rounded-[7px] cursor-pointer">
-              Hire pro
-            </button>
-            <p className="text-[10px] italic font-normal font-beVietnamPro text-center text-[#5F5F5F]">
-              *Risk Free, Release pay only if satisfied
-            </p>
-          </div>
+              <h3 className="text-[#70B444] text-base font-plusJakartaSans font-bold">
+                {service.title}
+              </h3>
+              <p className="my-[13] text-sm text-[#5F5F5F] font-plusJakartaSans">
+                {service.description}
+              </p>
+              <div className="text-sm text-[#5F5F5F]">
+                Starting at <br />
+                <span className="text-[32px] font-semibold font-plusJakartaSans">
+                  ${service.price}
+                </span>
+              </div>
+
+              <div>
+                <div className="text-base font-bold font-plusJakartaSans text-[#303030]">
+                  What it entails
+                </div>
+                <ul className="list-disc px-6 clamp-list">
+                  {service.items.map((item, index) => (
+                    <li
+                      key={index}
+                      className="text-base font-plusJakartaSans text-[#5F5F5F] font-normal"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <Link
+                href="#"
+                className="block w-full py-[5px] px-[15px] text-center text-[#70B444] font-beVietnamPro text-[17px] font-medium border border-gray-200"
+              >
+                View more
+              </Link>
+              <button className="block w-full my-1.5 py-[5px] px-[15px] text-center text-[#70B444] font-beVietnamPro text-[17px] font-medium border border-[#70B444] rounded-[7px] cursor-pointer">
+                Hire pro
+              </button>
+              <p className="text-[10px] italic font-normal font-beVietnamPro text-center text-[#5F5F5F]">
+                *Risk Free, Release pay only if satisfied
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
-      <section className="w-[1231] h-[736] opacity-100 border-t border-[#83A790]">
-        <div className="w-full my-[28] border border-gray-200">
+      <section className="w-full lg:w-[1231px] lg:h-[736px] opacity-100 border-t border-[#83A790] mx-auto lg:my-9.25">
+        <div className="w-full my-[28] ">
           <h2 className="text-center font-beVietnamPro text-4xl leading-[100%] text-[#303030] pb-[14]">
             How it works
           </h2>
-          <p className="w-[708] mx-auto font-medium text-sm leading-[100%] text-center text-[#5F5F5F]">
+          <p className="w-full lg:w-[708px] font-plusJakartaSans mx-auto font-medium text-sm leading-[100%] text-center text-[#5F5F5F]">
             Choose the service that best fits your needs—whether it&apos;s
             homework help, professional editing, or resume writing. Our tailored
             packages ensure there’s something for everyone:
           </p>
         </div>
-        <div className="w-full border border-gray-200">
-          <div className="w-[882px] h-[585px] mx-auto flex  border border-gray-400">
-            <div className="flex flex-col gap-y-[30px] self-end">
+        <div className="w-full ">
+          <div className="w-full lg:w-[882px] lg:h-[585px] mx-auto flex flex-col lg:flex-row gap-y-4 lg:gap-x-0">
+            <div className="flex flex-col gap-y-[30px] self-center lg:self-end">
               <div
-                className="w-[250px] h-[216px] rounded-3xl flex flex-col items-center justify-center bg-[#E0D44133] shadow-md"
+                className="relative w-[250px] h-[216px] rounded-3xl flex flex-col items-center justify-center bg-[#E0D44133] shadow-md"
                 style={{
                   clipPath:
                     "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
                 }}
               >
-                <div className={` text-3xl font-normal`}>01</div>
-                <div>Choose Your Package</div>
+                <div className="font-bungee text-3xl font-normal absolute top-[26px] left-[100px] text-[#0A0D0A]">
+                  01
+                </div>
+                <div className="font-beVietnamPro font-medium text-lg">
+                  Choose Your Package
+                </div>
               </div>
               <div
-                className="w-[250px] h-[216px] rounded-3xl flex flex-col items-center justify-center bg-[#E0D44133] shadow-md"
+                className="relative w-[250px] h-[216px] rounded-3xl flex  items-center justify-center bg-[#E0D441] shadow-md"
                 style={{
                   clipPath:
                     "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
                 }}
               >
-                <div>
-                  Choose a tailored resume package for your career
-                  level—Entry-Level, Mid-Career, or Executive—to make a strong
-                  impression.
+                <div
+                  className="w-[249px] h-[215px] rounded-3xl flex flex-col items-center justify-center bg-white  shadow-md p-10"
+                  style={{
+                    clipPath:
+                      "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+                  }}
+                >
+                  <div className="font-medium font-beVietnamPro text-xs text-[#5F5F5F]">
+                    Choose a tailored resume package for your career
+                    level—Entry-Level, Mid-Career, or Executive—to make a strong
+                    impression.
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="self-start flex flex-col gap-y-[30px] -ml-9">
+            <div className="self-center lg:self-start flex flex-col-reverse lg:flex-col gap-y-[30px] -ml-9">
               <div
-                className="w-[250px] h-[216px] rounded-3xl flex flex-col items-center justify-center bg-[#E0D44133] shadow-md"
+                className="relative w-[250px] h-[216px] rounded-3xl flex  items-center justify-center bg-[#D9736E33] shadow-md"
                 style={{
                   clipPath:
                     "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
                 }}
               >
-                <div>
-                  We gather insights on your career goals and achievements
-                  through a 30-minute consultation or a detailed questionnaire,
-                  tailored to your communication preference.
+                <div
+                  className="w-[249px] h-[215px] rounded-3xl flex flex-col items-center justify-center bg-white  shadow-md p-10"
+                  style={{
+                    clipPath:
+                      "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+                  }}
+                >
+                  <div className="font-medium font-beVietnamPro text-xs text-[#5F5F5F]">
+                    We gather insights on your career goals and achievements
+                    through a 30-minute consultation or a detailed
+                    questionnaire, tailored to your communication preference.
+                  </div>
                 </div>
               </div>
               <div
-                className="w-[250px] h-[216px] rounded-3xl flex flex-col items-center justify-center bg-[#E0D44133] shadow-md"
+                className="relative w-[250px] h-[216px] rounded-3xl flex flex-col items-center justify-center bg-[#D9736E33] shadow-md"
                 style={{
                   clipPath:
                     "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
                 }}
               >
-                <div className={` text-3xl font-normal`}>02</div>
-                <div>Consultation or Questionnaire</div>
-              </div>
-            </div>
-            <div className="self-end flex flex-col gap-y-[30px] -ml-9">
-              <div
-                className="w-[250px] h-[216px] rounded-3xl flex flex-col items-center justify-center bg-[#E0D44133] shadow-md"
-                style={{
-                  clipPath:
-                    "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
-                }}
-              >
-                <div className={` text-3xl font-normal`}>03</div>
-                <div>Drafting & Revisions</div>
-              </div>
-              <div
-                className="w-[250px] h-[216px] rounded-3xl flex flex-col items-center justify-center bg-[#E0D44133] shadow-md"
-                style={{
-                  clipPath:
-                    "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
-                }}
-              >
-                <div>
-                  We craft tailored, ATS-optimized resumes with unlimited
-                  revisions over 7 days to ensure your success.
+                <div className="font-bungee text-3xl font-normal absolute top-[26px] left-[100px] text-[#0A0D0A]">
+                  02
+                </div>
+                <div className="font-beVietnamPro font-medium text-lg text-[#0A0D0A]">
+                  Consultation or <br /> Questionnaire
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-y-[30px] self-start -ml-9">
+            <div className="self-center lg:self-end flex flex-col gap-y-[30px] -ml-9">
               <div
-                className="w-[250px] h-[216px] rounded-3xl flex flex-col items-center justify-center bg-[#E0D44133] shadow-md"
+                className="relative w-[250px] h-[216px] rounded-3xl flex flex-col items-center justify-center bg-[#4AAB9E33] shadow-md"
                 style={{
                   clipPath:
                     "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
                 }}
               >
-                <div>
-                  We deliver your finalized resume in 3 business days or within
-                  24–48 hours with rush delivery.
+                <div className="font-bungee text-3xl font-normal absolute top-[26px] left-[100px] text-[#0A0D0A]">
+                  03
+                </div>
+                <div className="font-beVietnamPro font-medium text-lg text-[#0A0D0A]">
+                  Drafting & Revisions
                 </div>
               </div>
               <div
-                className="w-[250px] h-[216px] rounded-3xl flex flex-col items-center justify-center bg-[#E0D44133] shadow-md"
+                className="relative w-[250px] h-[216px] rounded-3xl flex  items-center justify-center bg-[#4AAB9E33] shadow-md"
                 style={{
                   clipPath:
                     "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
                 }}
               >
-                <div className={` text-3xl font-normal`}>04</div>
-                <div>Delivery</div>
+                <div
+                  className="w-[249px] h-[215px] rounded-3xl flex flex-col items-center justify-center bg-white shadow-md p-10"
+                  style={{
+                    clipPath:
+                      "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+                  }}
+                >
+                  <div className="font-medium font-beVietnamPro text-xs text-[#5F5F5F]">
+                    We craft tailored, ATS-optimized resumes with unlimited
+                    revisions over 7 days to ensure your success.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col-reverse lg:flex-col gap-y-[30px] self-center lg:self-start -ml-9">
+              <div
+                className="relative w-[250px] h-[216px] rounded-3xl flex  items-center justify-center bg-[#E5963E33] shadow-md"
+                style={{
+                  clipPath:
+                    "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+                }}
+              >
+                <div
+                  className="w-[249px] h-[215px] rounded-3xl flex flex-col items-center justify-center bg-white  shadow-md p-10"
+                  style={{
+                    clipPath:
+                      "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+                  }}
+                >
+                  <div className="font-medium font-beVietnamPro text-xs text-[#5F5F5F]">
+                    We deliver your finalized resume in 3 business days or
+                    within 24–48 hours with rush delivery.
+                  </div>
+                </div>
+              </div>
+              <div
+                className="relative w-[250px] h-[216px] rounded-3xl flex flex-col items-center justify-center bg-[#E5963E33] shadow-md"
+                style={{
+                  clipPath:
+                    "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+                }}
+              >
+                <div className="font-bungee text-3xl font-normal absolute top-[26px] left-[100px] text-[#0A0D0A]">
+                  04
+                </div>
+                <div className="font-beVietnamPro font-medium text-lg text-[#0A0D0A]">
+                  Delivery
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="w-[1231] h-[736] my-9 opacity-100 gap-[2.31rem] border-t border-[#83A790]">
+      <section className="w-full lg:w-[1231px] lg:h-[736px] opacity-100  border-t border-[#83A790] mx-auto lg:my-9.25">
         <div className="w-full my-[28] ">
           <h2 className="text-center font-beVietnamPro text-4xl leading-[100%] text-[#303030] pb-[14]">
             Benefits
           </h2>
-          <p className="w-[708] mx-auto font-medium text-sm leading-[100%] text-center text-[#5F5F5F]">
+          <p className="w-full lg:w-[708px] mx-auto font-medium text-sm leading-[100%] text-center text-[#5F5F5F]">
             We understand the importance of meeting deadlines—whether it’s for
             an urgent job application, journal submission, or upcoming exam. We
             deliver on time, every time.
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-x-14 gap-y-9 py-9.25 ">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-14 gap-y-9 ">
           {benefits.map((benefit) => (
             <div
               key={benefit.id}
@@ -223,130 +276,35 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="w-[1231] h-[736] my-6.5 opacity-100  border-t border-[#83A790]">
-        <div className="w-full my-[28] border border-gray-200">
+
+      <section className="w-full lg:w-[1231px] lg:h-[736px]  opacity-100  border-t border-[#83A790] mx-auto lg:my-9.25">
+        <div className="w-full my-[28] ">
           <h2 className="text-center font-beVietnamPro text-4xl leading-[100%] text-[#303030] pb-[14]">
             Meet our top-performing experts
           </h2>
-          <p className="w-[708] mx-auto font-medium text-sm leading-[100%] text-center text-[#5F5F5F]">
+          <p className="w-full lg:w-[708px] mx-auto font-medium text-sm leading-[100%] text-center text-[#5F5F5F]">
             Handpicked professionals with proven expertise in crafting resumes
             that stand out. Our team combines industry knowledge and
             personalized strategies to help you achieve your career goals.
           </p>
         </div>
-        <div>
-          <div className="relative w-[288px] h-[330px] rounded-[20px] border border-[#F0F0F0] py-6 px-4">
-            <div className="absolute top-0 right-0 w-[73px] h-5 flex items-center gap-1 ps-1.5 bg-[#F8F8F8] rounded-tr-[20px]">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#70B444]" />
-              <span className="font-medium text-xs text-[#70B444]">Active</span>
-            </div>
-            <div className="w-[256px] h-[145px] flex ">
-              <div className="w-1/2">
-                <div className="relative w-[89] h-[89] mx-auto">
-                  <div className="w-full h-full rounded-full">
-                    <Image
-                      src="/profile.jpg"
-                      width={89}
-                      height={89}
-                      alt="profile"
-                      className="w-full h-full object-cover rounded-full"
-                    />
-                  </div>
-                  <div className="absolute top-[63.37px] left-[70.82px] w-[18.41px] h-[18.41px] bg-[#439F46] rounded-full " />
-                </div>
-                <div className="full">
-                  <p className="text-center font-bold text-base text-[#1F1F1F]">
-                    Phillis Owako
-                  </p>
-                  <div className="w-[101px] h-[34px] flex items-center justify-center gap-1.25 mx-auto rounded-[30px] py-1 px-2 bg-white border border-[#F0F0F0]">
-                    <Image
-                      src="/star.svg"
-                      width={24}
-                      height={24}
-                      alt="star icon"
-                    />
-                    <div className="font-bold text-sm">
-                      4.9 <span className="font-normal text-xs">(499)</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="w-1/2 h-full">
-                <div className="w-28 h-[113px] my-4 ms-4">
-                  <div>
-                    <div className="flex items-center gap-1">
-                      <Image
-                        src="/award.svg"
-                        alt="award"
-                        width={16}
-                        height={16}
-                      />{" "}
-                      <span className="font-bold text-sm text-[#303030]">
-                        50+
-                      </span>
-                    </div>
-                    <div className="font-normal text-xs text-[#545454]">
-                      Completed tasks
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-1">
-                      <Image
-                        src="/archive-book.svg"
-                        alt="archive book"
-                        width={16}
-                        height={16}
-                      />{" "}
-                      <span className="font-bold text-sm text-[#303030]">
-                        9+
-                      </span>
-                    </div>
-                    <div className="font-normal text-xs text-[#545454]">
-                      Years of experience
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-1">
-                      <Image
-                        src="/timer.svg"
-                        alt="award"
-                        width={16}
-                        height={16}
-                      />{" "}
-                      <span className="font-bold text-sm text-[#303030]">
-                        3 Days
-                      </span>
-                    </div>
-                    <div className="font-normal text-xs text-[#545454]">
-                      Delivery time
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="border border-[#E1EDE1] my-4" />
-            <div className="h-[113px]">
-              <p className="font-medium text-sm text-[#303030]">
-                Available for
-              </p>
-              <div className="flex gap-2 mt-[11px]  mb-[15px] ">
-                <div className="font-normal text-xs py-1 px-2 rounded-[7px] bg-[#F4F6FA]">
-                  Resume Writing
-                </div>
-                <div className="font-normal text-xs py-1 px-2 rounded-[7px] bg-[#F4F6FA]">
-                  IT
-                </div>
-                <div className="font-normal text-xs py-1 px-2 rounded-[7px] bg-[#F4F6FA]">
-                  Maths
-                </div>
-                <div className="font-normal text-xs py-1 px-2 rounded-[7px] bg-[#F4F6FA]">
-                  +7
-                </div>
-              </div>
-              <button className="w-full h-[42px] border border-[#70B444] rounded-[10.42px]">
-                Select pro
-              </button>
-            </div>
+
+        <div className="flex items-center flex-col lg:flex-row gap-3">
+          <Profile />
+          <Profile />
+          <Profile />
+
+          <div
+            className="w-[288px] h-[330px] rounded-[20px] border border-[#F0F0F0] py-6 px-4 flex items-center justify-center "
+            style={{
+              backgroundImage: "url('/writer-card.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <button className="w-full font-semibold font-beVietnamPro text-white text-base border border-[#70B444] rounded-[10px] py-1">
+              View all Pros
+            </button>
           </div>
         </div>
       </section>

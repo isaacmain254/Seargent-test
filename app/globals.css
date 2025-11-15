@@ -38,33 +38,25 @@ body {
   --heading-weight: 700;
 }
 
-.font-beVietnamPro {
-  font-family: var(--heading-font), system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-  font-weight: var(--heading-weight);
-}
 
-/* Apply to all h1s as a global fallback. Component classes can
-   still override details like color, size, etc. If a component
-   wants the shared font + weight, add `font-beVietnamPro`.
-*/
+
 h1 {
   font-family: var(--heading-font), system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   font-weight: var(--heading-weight);
 }
 
-/* Google Fonts */
-:root {
-  --font-funky: var(--font-bungee);
+.font-beVietnamPro {
+   font-family: var(--font-be-vietnam-pro), sans-serif;
 }
 
-/* Bungee helper class ---------------------------------------------------*/
-/* Use `className="font-funky"` on elements to apply the Bungee font
-   which is registered in `app/layout.tsx` as the CSS variable
-   `--font-bungee` (next/font/google provides the variable).
-*/
-.font-funky {
-  font-family: var(--font-funky), system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+.font-plusJakartaSans {
+   font-family: var(--font-plus-jakarta-sans), sans-serif;
 }
+
+.font-bungee {
+   font-family: var(--font-bungee), cursive;
+}
+
+
+

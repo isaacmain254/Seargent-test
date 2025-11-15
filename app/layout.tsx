@@ -1,22 +1,12 @@
 import type { Metadata } from "next";
 import {
-  Geist,
-  Geist_Mono,
   Be_Vietnam_Pro,
   Plus_Jakarta_Sans,
-  Bungee,
+  Bungee_Outline
 } from "next/font/google";
+
+
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const beVietnamPro = Be_Vietnam_Pro({
   variable: "--font-be-vietnam-pro",
@@ -30,7 +20,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   weight: ["400", "700"],
 });
 
-const bungee = Bungee({
+const bungee = Bungee_Outline({
   variable: "--font-bungee",
   subsets: ["latin"],
   weight: ["400"],
@@ -49,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${beVietnamPro.variable} ${plusJakartaSans.variable}  antialiased`}
+        className={`${beVietnamPro.variable} ${plusJakartaSans.variable} ${bungee.variable} antialiased`}
       >
         {children}
       </body>
