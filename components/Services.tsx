@@ -21,7 +21,7 @@ function ServiceCard({ service }: { service: Service }) {
     <div
       className={`relative border border-[#70B444] rounded-2xl p-4 flex flex-col justify-between transition-all duration-300 `}
       style={{
-        height: expanded ? "auto" : "576px",
+        height: expanded ? "auto" : window.innerWidth < 1024 ? "auto" : "576px",
       }}
     >
       <div>
@@ -73,7 +73,10 @@ function ServiceCard({ service }: { service: Service }) {
           {expanded ? "View less" : "View more"}
         </button>
 
-        <Link href="/pros" className="block w-full my-1.5 py-[5px] px-[15px] text-center text-[#70B444] font-beVietnamPro text-[17px] font-medium border border-[#70B444] rounded-[7px] cursor-pointer">
+        <Link
+          href="/pros"
+          className="block w-full my-1.5 py-[5px] px-[15px] text-center text-[#70B444] font-beVietnamPro text-[17px] font-medium border border-[#70B444] rounded-[7px] cursor-pointer"
+        >
           Hire pro
         </Link>
 
