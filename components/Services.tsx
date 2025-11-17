@@ -1,11 +1,12 @@
 "use client";
 
-import { Service, SERVICES } from "@/constants/services";
 import { useState } from "react";
+import Link from "next/link";
+import { Service, SERVICES } from "@/constants/services";
 
 export default function Services() {
   return (
-    <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-[18px] mx-5 lg:mx-0">
+    <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-[18px]">
       {SERVICES.map((service) => (
         <ServiceCard key={service.id} service={service} />
       ))}
@@ -72,9 +73,9 @@ function ServiceCard({ service }: { service: Service }) {
           {expanded ? "View less" : "View more"}
         </button>
 
-        <button className="block w-full my-1.5 py-[5px] px-[15px] text-center text-[#70B444] font-beVietnamPro text-[17px] font-medium border border-[#70B444] rounded-[7px] cursor-pointer">
+        <Link href="/pros" className="block w-full my-1.5 py-[5px] px-[15px] text-center text-[#70B444] font-beVietnamPro text-[17px] font-medium border border-[#70B444] rounded-[7px] cursor-pointer">
           Hire pro
-        </button>
+        </Link>
 
         <p className="text-[10px] italic font-beVietnamPro text-center text-[#5F5F5F]">
           *Risk Free, Release pay only if satisfied

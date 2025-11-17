@@ -5,8 +5,7 @@ import Services from "@/components/Services";
 
 export default function Home() {
   return (
-    <main className="bg-[#F5F5F5]">
-      {/* h-736 */}
+    <main className="bg-[#F5F5F5] mx-3 lg:mx-0">
       <section className="w-full lg:w-[1231px] opacity-100 border-t border-[#83A790] lg:my-9.25 mx-auto">
         <div className="w-full  my-9.25">
           <h2 className="text-center font-beVietnamPro text-4xl leading-[100%] text-[#303030] mb-3">
@@ -22,7 +21,7 @@ export default function Home() {
         <Services />
       </section>
 
-      <section className="w-full lg:w-[1231px] lg:h-[736px] opacity-100 border-t border-[#83A790] mx-auto lg:my-9.25">
+      <section className="w-full lg:w-[1231px] lg:h-[736px] opacity-100 border-t border-[#83A790] mx-auto my-9.25">
         <div className="w-full my-[28] ">
           <h2 className="text-center font-beVietnamPro text-4xl leading-[100%] text-[#303030] pb-[14]">
             How it works
@@ -166,18 +165,20 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div
-                className="relative w-[250px] h-[216px] rounded-3xl flex flex-col items-center justify-center bg-[#E5963E33] shadow-md"
-                style={{
-                  clipPath:
-                    "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
-                }}
-              >
-                <div className="font-bungee text-3xl font-normal absolute top-[26px] left-[100px] text-[#0A0D0A]">
-                  04
-                </div>
-                <div className="font-beVietnamPro font-medium text-lg text-[#0A0D0A]">
-                  Delivery
+              <div className="drop-shadow-2xl drop-shadow-[#E5963E33]">
+                <div
+                  className="relative w-[250px] h-[216px] rounded-3xl flex flex-col items-center justify-center bg-[#E5963E33]"
+                  style={{
+                    clipPath:
+                      "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+                  }}
+                >
+                  <div className="font-bungee text-3xl font-normal absolute top-[26px] left-[100px] text-[#0A0D0A]">
+                    04
+                  </div>
+                  <div className="font-beVietnamPro font-medium text-lg text-[#0A0D0A]">
+                    Delivery
+                  </div>
                 </div>
               </div>
             </div>
@@ -185,7 +186,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full lg:w-[1231px] lg:h-[736px] opacity-100  border-t border-[#83A790] mx-auto lg:my-9.25">
+      <section className="w-full lg:w-[1231px] lg:h-[736px] opacity-100  border-t border-[#83A790] mx-auto my-9.25">
         <div className="w-full my-[28] ">
           <h2 className="text-center font-beVietnamPro text-4xl leading-[100%] text-[#303030] pb-[14]">
             Benefits
@@ -200,7 +201,7 @@ export default function Home() {
           {benefits.map((benefit) => (
             <div
               key={benefit.id}
-              className="w-[364px] h-[298px] px-8 py-6 bg-white border border-[#F0F0F0] rounded-xl shadow-md space-y-3.5"
+              className="w-full lg:w-[364px] h-[298px] px-8 py-6 bg-white border border-[#F0F0F0] rounded-xl shadow-md space-y-3.5"
             >
               <div className="relative w-16 h-16">
                 <div className="absolute top-2.5 left-0 w-[54px]  h-[54px] flex justify-center items-center bg-[#000000] opacity-20 border-2 border-white   rounded-xl z-10">
@@ -224,7 +225,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full lg:w-[1231px] lg:h-[736px]  opacity-100  border-t border-[#83A790] mx-auto lg:my-14">
+      <section className="w-full lg:w-[1231px] lg:h-[736px]  opacity-100  border-t border-[#83A790] mx-auto my-14">
         <div className="w-full my-[28] ">
           <h2 className="text-center font-beVietnamPro text-4xl leading-[100%] text-[#303030] pb-[14]">
             Meet our top-performing experts
