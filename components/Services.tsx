@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Service, SERVICES } from "@/constants/services";
 
@@ -16,12 +16,22 @@ export default function Services() {
 
 function ServiceCard({ service }: { service: Service }) {
   const [expanded, setExpanded] = useState(false);
+    const [isMobile, setIsMobile] = useState(() => typeof window !== "undefined" ? window.innerWidth < 1024 : true);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 1024);
+      };
+
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
   return (
     <div
       className={`relative border border-[#70B444] rounded-2xl p-4 flex flex-col justify-between transition-all duration-300 `}
       style={{
-        height: expanded ? "auto" : window.innerWidth < 1024 ? "auto" : "576px",
+        height: expanded ? "auto" : isMobile ? "auto" : "576px",
       }}
     >
       <div>
