@@ -71,7 +71,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="self-center lg:self-start flex flex-col-reverse lg:flex-col gap-y-[30px] -ml-9">
+            <div className="self-center lg:self-start flex flex-col-reverse lg:flex-col gap-y-[30px] lg:-ml-9">
               <div
                 className="relative w-[250px] h-[216px] rounded-3xl flex  items-center justify-center bg-[#D9736E33] shadow-md"
                 style={{
@@ -108,7 +108,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="self-center lg:self-end flex flex-col gap-y-[30px] -ml-9">
+            <div className="self-center lg:self-end flex flex-col gap-y-[30px] lg:-ml-9">
               <div
                 className="relative w-[250px] h-[216px] rounded-3xl flex flex-col items-center justify-center bg-[#4AAB9E33] shadow-md"
                 style={{
@@ -144,7 +144,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col-reverse lg:flex-col gap-y-[30px] self-center lg:self-start -ml-9">
+            <div className="flex flex-col-reverse lg:flex-col gap-y-[30px] self-center lg:self-start lg:-ml-9">
               <div
                 className="relative w-[250px] h-[216px] rounded-3xl flex  items-center justify-center bg-[#E5963E33] shadow-md"
                 style={{
