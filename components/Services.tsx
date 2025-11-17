@@ -18,12 +18,11 @@ function ServiceCard({ service }: { service: Service }) {
 
   return (
     <div
-      className={`border border-[#70B444] rounded-2xl p-4 flex flex-col justify-between transition-all duration-300`}
+      className={`relative border border-[#70B444] rounded-2xl p-4 flex flex-col justify-between transition-all duration-300 `}
       style={{
         height: expanded ? "auto" : "576px",
       }}
     >
-        
       <div>
         <h3 className="text-[#70B444] text-base font-plusJakartaSans font-bold">
           {service.title}
@@ -61,11 +60,14 @@ function ServiceCard({ service }: { service: Service }) {
           </ul>
         </div>
       </div>
+      {!expanded && (
+        <div className="absolute bottom-12 left-0 z-10 h-[220px] w-full flex bg-linear-to-t from-white to-[#F5F5F5]  text-red-600" />
+      )}
 
-      <div className="mt-4">
+      <div className="mt-4 z-40">
         <button
           onClick={() => setExpanded(!expanded)}
-          className="block w-full py-[5px] px-[15px] text-center text-[#70B444] font-beVietnamPro text-[17px] font-medium border border-gray-200"
+          className="block w-full py-[5px] px-[15px] text-center text-[#70B444] font-beVietnamPro text-[17px] font-medium"
         >
           {expanded ? "View less" : "View more"}
         </button>
